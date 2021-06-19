@@ -16,10 +16,10 @@ window.onload = function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://sugar.wtf/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     $("#history").attr("href", href)
 
@@ -29,25 +29,25 @@ window.onload = function() {
 
 function getMainAPI() {
     // Set Network config according to Endpoint selection
-    if (localStorage.getItem("api") == "https://api.sugarchain.org" || localStorage.getItem("api") == null){
+    if (localStorage.getItem("api") == "https://api.bitwebcore.org" || localStorage.getItem("api") == null){
         netconfig = {					
            'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
                 },
-               'bech32': 'sugar',
-               'pubKeyHash': 0x3F,
-               'scriptHash': 0x7D,
+               'bech32': 'web',
+               'pubKeyHash': 0x21,
+               'scriptHash': 0x1E,
                 'wif': 0x80}
         }
     }
     
-    else if (localStorage.getItem("api") == "https://api-testnet.sugarchain.org") {
+    else if (localStorage.getItem("api") == "https://api-testnet.bitwebcore.org") {
         netconfig = {					
             'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
@@ -95,10 +95,10 @@ $("#generateAddress").click(function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://sugar.wtf/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     $("#history").attr("href", href)
 })
